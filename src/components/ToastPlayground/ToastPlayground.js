@@ -54,7 +54,7 @@ function ToastPlayground() {
             <div className={styles.label}>Variant</div>
             <div className={`${styles.inputWrapper} ${styles.radioWrapper}`}>
               {VARIANT_OPTIONS.map((option) => (
-                <label htmlFor={`variant-${option}`}>
+                <label key={option} htmlFor={`variant-${option}`}>
                   <input
                     id={`variant-${option}`}
                     type="radio"

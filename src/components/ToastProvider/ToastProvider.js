@@ -1,10 +1,6 @@
 import React from "react";
 
-export const ToastContext = React.createContext({
-  toasts: [],
-  removeToastById: undefined,
-  addToastToShelf: undefined,
-});
+export const ToastContext = React.createContext({});
 
 function ToastProvider({ children }) {
   const [toasts, setToasts] = React.useState([]);
@@ -25,8 +21,12 @@ function ToastProvider({ children }) {
     });
   };
 
+  const clearToasts = () => setToasts([]);
+
   return (
-    <ToastContext.Provider value={{ toasts, removeToastById, addToastToShelf }}>
+    <ToastContext.Provider
+      value={{ toasts, removeToastById, addToastToShelf, clearToasts }}
+    >
       {children}
     </ToastContext.Provider>
   );
